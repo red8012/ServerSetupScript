@@ -10,3 +10,10 @@ function getCurrentDir() {
 
 current_dir=$(getCurrentDir)
 source "${current_dir}/setupLibrary.sh"
+
+
+username="user"
+promptForPassword
+usermod -aG sudo user
+disableSudoPassword "${username}"
+configureNTP
