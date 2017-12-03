@@ -30,6 +30,7 @@ source "${current_dir}/setupLibrary.sh"
 
 username="user"
 promptForPassword
+addUserAccount "${username}" "${password}"
 usermod -aG sudo user
 disableSudoPassword "${username}"
 configureNTP
