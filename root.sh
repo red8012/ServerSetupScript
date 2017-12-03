@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-echo 'Welcome to ServerSetupScript'
+echo 'Welcome to ServerSetupScript, executing part 1 as root'
 
 function getCurrentDir() {
     local current_dir="${BASH_SOURCE%/*}"
@@ -87,5 +87,5 @@ read -rp $'Paste in the public SSH key for the new user:\n' sshKey
 addSSHKey "${username}" "${sshKey}"
 usermod -aG sudo user
 disableSudoPassword "${username}"
-sudo apt-get update
-sudo apt-get --assume-yes install ntp
+
+echo 'All finished'
