@@ -87,5 +87,8 @@ read -rp $'Paste in the public SSH key for the new user:\n' sshKey
 addSSHKey "${username}" "${sshKey}"
 usermod -aG sudo user
 disableSudoPassword "${username}"
+sudo apt-get update
+sudo apt purge snapd -y
+sudo apt autoremove -y
 unattended-upgrades
 echo 'All finished'
