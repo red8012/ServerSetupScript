@@ -87,8 +87,13 @@ read -s -rp "Enter new UNIX password:" password
 addUserAccount "${username}" "${password}" "true"
 usermod -aG sudo user
 disableSudoPassword "${username}"
-read -rp $'Paste in the public SSH key for the new user:\n' sshKey
-addSSHKey "${username}" "${sshKey}"
+
+# addSSHKey
+execAsUser "${username}" "mkdir -p ~/.ssh; chmod 700 ~/.ssh; touch ~/.ssh/authorized_keys"
+cp .ssh/authorized_keys /home/$username/.ssh/authorized_keys
+execAsUser "${username}" "chmod 600 ~/.ssh/authorized_keys"
+# read -rp $'Paste in the public SSH key for the new user:\n' sshKey
+# addSSHKey "${username}" "${sshKey}"
 
 apt purge snapd -y
 apt autoremove -y
