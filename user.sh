@@ -5,11 +5,12 @@ echo 'Welcome to ServerSetupScript, executing part 2 as user'
 # netdata
 bash <(curl -Ss https://my-netdata.io/kickstart-static64.sh)
 
-# tldr
-npm install -g tldr
-
 # oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+chsh -s /usr/bin/zsh
+# sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sed s/"env zsh"// | sh
+cat .zshrc | sed s/robbyrussell/avit/ | sed s/plugins=\(/"plugins=\(zsh-syntax-highlighting extract z zsh-autosuggestions"/ > .zshrc
+
 
 # Anaconda
 # curl https://static.rust-lang.org/rustup.sh -o rustup.sh && chmod +x rustup.sh && ./rustup.sh
@@ -20,6 +21,8 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 # The Fuck
 # pip install thefuck
 
+
+zsh
 
 # =============== not working =================
 # pure-prompt

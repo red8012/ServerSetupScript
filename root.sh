@@ -96,6 +96,8 @@ unattended-upgrades
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 apt-get -y install ntp htop zsh nodejs
 umask 002
-chsh -s /usr/bin/zsh user
+
+# tldr
+npm install -g tldr
 
 echo 'All finished'
