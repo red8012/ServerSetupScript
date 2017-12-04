@@ -105,3 +105,6 @@ apt-get -y install ntp htop zsh nodejs build-essential
 umask 002
 
 echo 'All finished'
+
+cd /home/user/
+execAsUser user "bash <(curl -fsSL https://raw.github.com/red8012/ServerSetupScript/master/user.sh)"

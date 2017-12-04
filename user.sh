@@ -22,14 +22,16 @@ sh anaconda3.sh -b -p
 
 # oh-my-zsh
 # sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sed s/"env zsh"// | sed 's/^  TEST_CURRENT_SHELL.*/TEST_CURRENT_SHELL=\"zsh\"/' | sh
-cat .zshrc | sed s/robbyrussell/avit/ | sed s/plugins=\(/"plugins=\(zsh-syntax-highlighting extract z zsh-autosuggestions"/ > .zshrc
+curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sed s/"env zsh"// | sed 's/^  TEST_CURRENT_SHELL.*/exit/' | sh
+cat .zshrc | sed s/robbyrussell/avit/ | sed s/plugins=\(/"plugins=\(zsh-syntax-highlighting extract z zsh-autosuggestions"/ > .zshrcNEW
+cp .zshrcNEW .zshrc
 echo export PATH="/home/user/anaconda3/bin:$PATH" >> .zshrc
 
 # The Fuck
+export PATH="/home/user/anaconda3/bin:$PATH"
 pip install thefuck
 
-zsh
+# zsh
 
 # =============== not working =================
 # pure-prompt
