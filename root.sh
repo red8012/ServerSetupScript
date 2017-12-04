@@ -87,8 +87,15 @@ read -rp $'Paste in the public SSH key for the new user:\n' sshKey
 addSSHKey "${username}" "${sshKey}"
 usermod -aG sudo user
 disableSudoPassword "${username}"
-sudo apt-get update
-sudo apt purge snapd -y
-sudo apt autoremove -y
+apt-get update
+apt purge snapd -y
+apt autoremove -y
 unattended-upgrades
+
+# package installation
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+apt-get -y install ntp htop zsh nodejs
+umask 002
+chsh -s /usr/bin/zsh user
+
 echo 'All finished'
