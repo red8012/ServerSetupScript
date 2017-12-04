@@ -9,19 +9,20 @@ function getCurrentDir() {
 }
 
 function promptForPassword() {
-   PASSWORDS_MATCH=0
-   while [ "${PASSWORDS_MATCH}" -eq "0" ]; do
+    # PASSWORDS_MATCH=0
+    # while [ "${PASSWORDS_MATCH}" -eq "0" ]; do
+    #     read -s -rp "Enter new UNIX password:" password
+    #     printf "\n"
+    #     read -s -rp "Retype new UNIX password:" password_confirmation
+    #     printf "\n"
+    #
+    #     if [[ "${password}" != "${password_confirmation}" ]]; then
+    #         echo "Passwords do not match! Please try again."
+    #     else
+    #         PASSWORDS_MATCH=1
+    #     fi
+    # done
        read -s -rp "Enter new UNIX password:" password
-       printf "\n"
-       read -s -rp "Retype new UNIX password:" password_confirmation
-       printf "\n"
-
-       if [[ "${password}" != "${password_confirmation}" ]]; then
-           echo "Passwords do not match! Please try again."
-       else
-           PASSWORDS_MATCH=1
-       fi
-   done
 }
 
 # Add the new user account
@@ -81,23 +82,21 @@ current_dir=$(getCurrentDir)
 
 # setup user
 username="user"
-promptForPassword
+# promptForPassword
+read -s -rp "Enter new UNIX password:" password
 addUserAccount "${username}" "${password}" "true"
-read -rp $'Paste in the public SSH key for the new user:\n' sshKey
-addSSHKey "${username}" "${sshKey}"
 usermod -aG sudo user
 disableSudoPassword "${username}"
-apt-get update
+read -rp $'Paste in the public SSH key for the new user:\n' sshKey
+addSSHKey "${username}" "${sshKey}"
+
 apt purge snapd -y
 apt autoremove -y
-unattended-upgrades
 
 # package installation
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
-apt-get -y install ntp htop zsh nodejs
+unattended-upgrades
+apt-get -y install ntp htop zsh nodejs build-essential
 umask 002
-
-# tldr
-npm install -g tldr
 
 echo 'All finished'
