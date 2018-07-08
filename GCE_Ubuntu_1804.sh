@@ -2,7 +2,7 @@ sudo apt purge snapd -y
 sudo apt autoremove -y
 
 sudo unattended-upgrades
-sudo apt-get -y install ntp htop zsh build-essential mosh tldr
+sudo apt-get -y install ntp htop zsh build-essential mosh tldr zsh-antigen
 
 # install node
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
@@ -19,3 +19,8 @@ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 sh Miniconda3-latest-Linux-x86_64.sh -b -p
 export PATH="$HOME/miniconda3/bin:$PATH"
 conda clean --all -y
+
+# set up zsh
+git clone https://github.com/red8012/ServerSetupScript.git
+cd ServerSetupScript
+cp .zshrc ~

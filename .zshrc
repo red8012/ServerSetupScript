@@ -1,4 +1,4 @@
-export PATH="/Users/ray/anaconda3/bin:$PATH"
+export PATH="$HOME/anaconda3/bin:$PATH"
 
 # Fix Python locale issues
 export LC_ALL=en_US.UTF-8
@@ -11,7 +11,7 @@ alias ....='cd ../../../'
 alias mkdir='mkdir -pv'
 eval $(thefuck --alias)
 
-source /usr/local/share/antigen/antigen.zsh
+source $HOME/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle mafredri/zsh-async
 antigen bundle sindresorhus/pure
