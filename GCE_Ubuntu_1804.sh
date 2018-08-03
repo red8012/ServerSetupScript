@@ -2,7 +2,7 @@ sudo apt purge snapd -y
 sudo apt autoremove -y
 
 sudo unattended-upgrades
-sudo apt-get -y install ntp htop zsh build-essential mosh tldr zsh-antigen
+sudo apt-get -y install ntp htop zsh build-essential mosh tldr gcc-8 g++-8
 
 # install node
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
@@ -24,3 +24,17 @@ conda clean --all -y
 git clone https://github.com/red8012/ServerSetupScript.git
 cd ServerSetupScript
 cp .zshrc ~
+curl -L git.io/antigen > $HOME/antigen.zsh
+sudo chsh -s /usr/bin/zsh $USER
+
+pip install thefuck
+pip install --user pipenv
+
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 700 --slave /usr/bin/g++ g++ /usr/bin/g++-7
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
+
+rm $HOME/Miniconda3-latest-Linux-x86_64.sh
+
+# install fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
