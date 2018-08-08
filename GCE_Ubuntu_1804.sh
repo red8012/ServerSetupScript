@@ -25,6 +25,11 @@ wget https://github.com/ogham/exa/releases/download/v0.8.0/exa-linux-x86_64-0.8.
 unzip exa-linux-x86_64-0.8.0.zip
 sudo mv exa-linux-x86_64 /usr/local/bin/exa
 
+# install bat
+wget https://github.com/sharkdp/bat/releases/download/v0.4.1/bat-v0.4.1-x86_64-unknown-linux-gnu.tar.gz
+tar xzf bat-v0.4.1-x86_64-unknown-linux-gnu.tar.gz
+sudo mv bat-v0.4.1-x86_64-unknown-linux-gnu/bat /usr/local/bin/bat
+
 # set up zsh
 git clone https://github.com/red8012/ServerSetupScript.git
 cd ServerSetupScript
