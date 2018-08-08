@@ -2,7 +2,7 @@ sudo apt purge snapd -y
 sudo apt autoremove -y
 
 sudo unattended-upgrades
-sudo apt-get -y install ntp htop zsh build-essential mosh tldr gcc-8 g++-8
+sudo apt-get -y install ntp htop zsh build-essential mosh tldr gcc-8 g++-8 unzip
 
 # install node
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
@@ -20,6 +20,11 @@ sh Miniconda3-latest-Linux-x86_64.sh -b -p
 export PATH="$HOME/miniconda3/bin:$PATH"
 conda clean --all -y
 
+# install exa
+wget https://github.com/ogham/exa/releases/download/v0.8.0/exa-linux-x86_64-0.8.0.zip
+unzip exa-linux-x86_64-0.8.0.zip
+sudo mv exa-linux-x86_64 /usr/local/bin/exa
+
 # set up zsh
 git clone https://github.com/red8012/ServerSetupScript.git
 cd ServerSetupScript
@@ -29,6 +34,7 @@ sudo chsh -s /usr/bin/zsh $USER
 
 pip install thefuck
 pip install --user pipenv
+curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
 
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 700 --slave /usr/bin/g++ g++ /usr/bin/g++-7
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8

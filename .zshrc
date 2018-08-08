@@ -21,7 +21,6 @@ antigen bundle extract
 antigen bundle z
 antigen bundle command-not-found
 
-antigen bundle supercrabtree/k
 antigen bundle andrewferrier/fzf-z
 antigen bundle hlissner/zsh-autopair
 
@@ -35,4 +34,4 @@ antigen bundle zsh-users/zsh-history-substring-search
 
 antigen apply
 
-alias k='k -h'
+alias k='exa -l'
