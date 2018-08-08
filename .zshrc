@@ -35,3 +35,4 @@ antigen bundle zsh-users/zsh-history-substring-search
 antigen apply
 
 alias k='exa -l'
+unalias grv

@@ -30,6 +30,11 @@ wget https://github.com/sharkdp/bat/releases/download/v0.4.1/bat-v0.4.1-x86_64-u
 tar xzf bat-v0.4.1-x86_64-unknown-linux-gnu.tar.gz
 sudo mv bat-v0.4.1-x86_64-unknown-linux-gnu/bat /usr/local/bin/bat
 
+# install grv
+wget -O grv https://github.com/rgburke/grv/releases/download/v0.2.0/grv_v0.2.0_linux64
+chmod +x ./grv
+sudo mv grv /usr/local/bin/grv
+
 # set up zsh
 git clone https://github.com/red8012/ServerSetupScript.git
 cd ServerSetupScript
