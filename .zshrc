@@ -1,4 +1,4 @@
-export PATH="$HOME/miniconda3/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/miniconda3/bin:$HOME/.local/bin:$HOME/.yarn/bin:$PATH"
 
 # Fix Python locale issues
 export LC_ALL=en_US.UTF-8

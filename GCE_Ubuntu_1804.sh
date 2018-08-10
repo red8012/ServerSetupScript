@@ -35,6 +35,9 @@ wget -O grv https://github.com/rgburke/grv/releases/download/v0.2.0/grv_v0.2.0_l
 chmod +x ./grv
 sudo mv grv /usr/local/bin/grv
 
+# install fkill
+yarn global add fkill-cli
+
 # set up zsh
 git clone https://github.com/red8012/ServerSetupScript.git
 cd ServerSetupScript
