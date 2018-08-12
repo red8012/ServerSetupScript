@@ -1,5 +1,10 @@
+#!/bin/bash
 # To run this script, do
 # curl https://raw.githubusercontent.com/red8012/ServerSetupScript/master/GCE_Ubuntu_1804.sh | bash
+
+# strict mode
+set -euo pipefail
+IFS=$'\n\t'
 
 export PATH="$HOME/miniconda3/bin:$HOME/.local/bin:$HOME/.yarn/bin:$PATH"
 sudo apt purge snapd -y
