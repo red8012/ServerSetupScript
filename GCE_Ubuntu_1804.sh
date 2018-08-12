@@ -12,7 +12,7 @@ sudo apt autoremove -y
 sudo apt-get update
 sudo unattended-upgrades
 sudo apt-get upgrade -y
-sudo apt-get -y install ntp htop zsh build-essential mosh tldr unzip
+sudo apt-get -y install ntp htop zsh build-essential mosh tldr unzip moreutils
 #sudo apt-get -y install ntp htop zsh build-essential mosh tldr gcc-8 g++-8 unzip
 
 # install node and yarn
@@ -67,3 +67,7 @@ curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.p
 # install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
+
+# generate key
+ssh-keygen -t rsa -C "red8012@gmail.com" -b 4096 -f $HOME/.ssh/id_rsa -P ""
+cat ~/.ssh/id_rsa.pub
