@@ -12,7 +12,7 @@ sudo apt autoremove -y
 sudo apt-get update
 sudo unattended-upgrades
 sudo apt-get upgrade -y
-sudo apt-get -y install ntp htop zsh build-essential mosh tldr unzip moreutils
+sudo apt-get -y install ntp htop zsh build-essential mosh tldr unzip moreutils linux-tools-common linux-tools-gcp rng-tools
 #sudo apt-get -y install ntp htop zsh build-essential mosh tldr gcc-8 g++-8 unzip
 
 # install node and yarn
