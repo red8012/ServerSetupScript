@@ -10,7 +10,7 @@ export PATH="$HOME/miniconda3/bin:$HOME/.local/bin:$HOME/.yarn/bin:$PATH"
 sudo apt-get update
 sudo unattended-upgrades
 sudo apt-get upgrade -y
-sudo apt-get -y install ntp htop zsh build-essential mosh unzip moreutils rng-tools parallel apt-transport-https
+sudo apt-get -y install ntp htop zsh build-essential mosh unzip moreutils rng-tools parallel apt-transport-https git
 echo will cite | parallel --citation
 
 # install node and yarn
@@ -24,6 +24,7 @@ curl -sSO https://dl.google.com/cloudagents/install-monitoring-agent.sh
 curl -sSO https://dl.google.com/cloudagents/install-logging-agent.sh
 sudo bash install-monitoring-agent.sh
 sudo bash install-logging-agent.sh
+rm install-logging-agent.sh install-monitoring-agent.sh
 
 # install conda
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -67,7 +68,7 @@ curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.p
 
 # install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-bash ~/.fzf/install
+echo y | bash ~/.fzf/install
 
 # generate key
 ssh-keygen -t rsa -C "red8012@gmail.com" -b 4096 -f $HOME/.ssh/id_rsa -P ""
