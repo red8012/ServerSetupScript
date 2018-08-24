@@ -10,7 +10,7 @@ export PATH="$HOME/miniconda3/bin:$HOME/.local/bin:$HOME/.yarn/bin:$PATH"
 sudo apt-get update
 sudo unattended-upgrades
 sudo apt-get upgrade -y
-sudo apt-get -y install ntp htop zsh build-essential mosh unzip moreutils rng-tools parallel apt-transport-https git
+sudo apt-get -y install ntp htop zsh build-essential mosh unzip moreutils parallel apt-transport-https git
 echo will cite | parallel --citation
 
 # install node and yarn

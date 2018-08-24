@@ -57,7 +57,7 @@ sudo chsh -s /usr/bin/zsh $USER
 
 # install Python packages
 pip install --upgrade pip
-pip install thefuck
+pip install thefuck glances
 pip install --user pipenv
 curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
 
@@ -66,7 +66,7 @@ curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.p
 
 # install fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+echo y | bash ~/.fzf/install
 
 # generate key
 ssh-keygen -t rsa -C "red8012@gmail.com" -b 4096 -f $HOME/.ssh/id_rsa -P ""
