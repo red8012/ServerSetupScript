@@ -57,9 +57,8 @@ sudo chsh -s /usr/bin/zsh $USER
 
 # install Python packages
 pip install --upgrade pip
-pip install thefuck glances
+pip install thefuck glances poetry howdoi
 pip install --user pipenv
-curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
 
 #sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 700 --slave /usr/bin/g++ g++ /usr/bin/g++-7
 #sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
